@@ -135,7 +135,7 @@ class Server:
                     await self.__clients[client]["w"].drain()
 
     async def run(self):
-        async with websockets.serve(self.__handle_client_msg, "127.0.0.1", 8888):
+        async with websockets.serve(self.__handle_client_msg, self.__host, self.__port):
             await asyncio.Future()
 
 
