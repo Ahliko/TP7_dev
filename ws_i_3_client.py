@@ -94,6 +94,7 @@ class Client:
         await self.__websocket.send(f"Hello|{self.__pseudo}")
         await self.__websocket.drain()
         data = await self.decode(self.__websocket)
+        print(data)
         self.__data["id"] = data.split("|")[1]
         self.to_json(self.__data)
         await self.write_content(self.to_json(self.__data), self.__link)
