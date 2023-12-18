@@ -157,7 +157,6 @@ class Server:
 
                     await self.__websockets[i].send(
                         f"[{datetime.datetime.today().hour}:{datetime.datetime.today().minute}]\033Annonce : {localclient['pseudo']} a rejoint la chatroom")
-                    print(client)
                     await self.__websockets[i].drain()
 
     async def run(self):
